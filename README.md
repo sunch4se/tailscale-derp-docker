@@ -37,10 +37,6 @@ image: ghcr.io/sunch4se/tailscale-derp-docker:latest
 
 There is a github actions workflow setup to build and publish a new container every roughly every 10 days so the tailscale version will be matching whichever version is available here https://pkgs.alpinelinux.org/package/edge/community/x86/tailscale
 
-# Instructions
-
-Instructions can be followed below or you can find a more detailed walkthrough on my blog. [https://tijjjy.me/2023-01-22/Self-Host-Tailscale-Derp-Server](https://tijjjy.me/2023-01-22/Self-Host-Tailscale-Derp-Server)
-
 ### Ports Required
 
 To allow full functionality of the DERP server, you will need to open/allow the following ports on your Firewall/Security Group
