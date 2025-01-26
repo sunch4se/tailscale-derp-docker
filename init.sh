@@ -14,6 +14,10 @@ if [ "$TAILSCALE_ADVERTISE_EXIT_NODE" = "true" ]; then
     TAILSCALE_UP_CMD="$TAILSCALE_UP_CMD --advertise-exit-node"
 fi
 
+if [ "$TAILSCALE_SNAT_SUBNET_ROUTES" = "false" ]; then
+    TAILSCALE_UP_CMD="$TAILSCALE_UP_CMD --snat-subnet-routes=false"
+fi
+
 # Run the constructed command
 $TAILSCALE_UP_CMD >> /dev/stdout &
 
@@ -28,3 +32,7 @@ mkdir -p /root/derper/$TAILSCALE_DERP_HOSTNAME
     --certdir /root/derper/$TAILSCALE_DERP_HOSTNAME \
     --stun \
     --verify-clients=$TAILSCALE_DERP_VERIFY_CLIENTS
+
+
+
+--snat-subnet-routes=false
