@@ -3,7 +3,7 @@ version: '3'
 services:
    tailscale-derp:
        container_name: tailscale-derp
-       image: tailscale-derp-docker:1.0
+       image: ghcr.io/sunch4se/tailscale-derp-docker:latest
        hostname: ${TAILSCALE_DERP_HOSTNAME}
        volumes:
          - /lib/modules:/lib/modules:ro
@@ -17,6 +17,8 @@ services:
          - TAILSCALE_DERP_VERIFY_CLIENTS=${TAILSCALE_DERP_VERIFY_CLIENTS}
          - TAILSCALE_DERP_CERTMODE=${TAILSCALE_DERP_CERTMODE}
          - TAILSCALE_AUTH_KEY=${TAILSCALE_AUTH_KEY}
+         - TAILSCALE_ADVERTISE_ROUTES=${TAILSCALE_ADVERTISE_ROUTES}
+         - TAILSCALE_ADVERTISE_EXIT_NODE=${TAILSCALE_ADVERTISE_EXIT_NODE}
        ports:
          - 80:80/tcp
          - 443:443/tcp
