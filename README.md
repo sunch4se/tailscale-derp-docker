@@ -69,7 +69,6 @@ TAILSCALE_AUTH_KEY="ENTER YOUR TAILSCALE AUTH KEY HERE"
 TAILSCALE_ADVERTISE_ROUTES="1.2.3.4/32,192.168.0.0/24"
 TAILSCALE_ADVERTISE_EXIT_NODE=true/false
 ```
-Removing the advertise-routes or exit-node config from the compose-file and recreating the container will NOT result in having the config removed, due to tailscale internal configuration. Consider deleting the config-directory and then recreate the container.
 
 ### Building Docker Image
 ```
