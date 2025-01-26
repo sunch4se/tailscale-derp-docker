@@ -6,11 +6,11 @@
 # Build the tailscale up command with conditional flags
 TAILSCALE_UP_CMD="/usr/bin/tailscale up --accept-routes=true --accept-dns=true --auth-key $TAILSCALE_AUTH_KEY"
 
-if [ -n "$ADVERTISE_ROUTES" ]; then
-    TAILSCALE_UP_CMD="$TAILSCALE_UP_CMD --advertise-routes=$ADVERTISE_ROUTES"
+if [ -n "$TAILSCALE_ADVERTISE_ROUTES" ]; then
+    TAILSCALE_UP_CMD="$TAILSCALE_UP_CMD --advertise-routes=$TAILSCALE_ADVERTISE_ROUTES"
 fi
 
-if [ "$ADVERTISE_EXIT_NODE" = "true" ]; then
+if [ "$TAILSCALE_ADVERTISE_EXIT_NODE" = "true" ]; then
     TAILSCALE_UP_CMD="$TAILSCALE_UP_CMD --advertise-exit-node"
 fi
 
