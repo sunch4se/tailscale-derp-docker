@@ -32,7 +32,7 @@ image: tailscale-derp-docker:1.0
 ```
 To the following,
 ```
-image: ghcr.io/tijjjy/tailscale-derp-docker:latest
+image: ghcr.io/sunch4se/tailscale-derp-docker:latest
 ```
 
 There is a github actions workflow setup to build and publish a new container every roughly every 10 days so the tailscale version will be matching whichever version is available here https://pkgs.alpinelinux.org/package/edge/community/x86/tailscale
