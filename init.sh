@@ -4,7 +4,7 @@
 /usr/sbin/tailscaled --state=/var/lib/tailscale/tailscaled.state >> /dev/stdout &
 
 # Build the tailscale up command with conditional flags
-TAILSCALE_UP_CMD="/usr/bin/tailscale up --accept-routes=true --accept-dns=true --auth-key $TAILSCALE_AUTH_KEY"
+TAILSCALE_UP_CMD="/usr/bin/tailscale up --reset --accept-routes=true --accept-dns=true --auth-key $TAILSCALE_AUTH_KEY"
 
 if [ -n "$TAILSCALE_ADVERTISE_ROUTES" ]; then
     TAILSCALE_UP_CMD="$TAILSCALE_UP_CMD --advertise-routes=$TAILSCALE_ADVERTISE_ROUTES"
