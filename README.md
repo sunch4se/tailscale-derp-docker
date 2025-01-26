@@ -58,13 +58,16 @@ Port 3478 is for STUN
 **IMPORTANT STEP**
 
 Change the variables below, most importantly the hostname and tailscale auth key variable.  
-Make sure the hostname is correct in your DNS zone or you will get an error when attempting to request a letsencrypt certificate
+Make sure the hostname is correct in your DNS zone or you will get an error when attempting to request a letsencrypt certificate.
+Set TAILSCALE_ADVERTISE_ROUTES to advertise specific routes and/or apply TAILSCALE_ADVERTISE_EXIT_NODE to route 0.0.0.0/0 through this exit node.
 
 ```
 TAILSCALE_DERP_HOSTNAME=derp.example.com
 TAILSCALE_DERP_VERIFY_CLIENTS=true
 TAILSCALE_DERP_CERTMODE=letsencrypt
 TAILSCALE_AUTH_KEY="ENTER YOUR TAILSCALE AUTH KEY HERE"
+TAILSCALE_ADVERTISE_ROUTES="1.2.3.4/32,192.168.0.0/24"
+TAILSCALE_ADVERTISE_EXIT_NODE=true/false
 ```
 
 ### Building Docker Image
