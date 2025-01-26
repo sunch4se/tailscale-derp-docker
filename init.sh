@@ -32,7 +32,3 @@ mkdir -p /root/derper/$TAILSCALE_DERP_HOSTNAME
     --certdir /root/derper/$TAILSCALE_DERP_HOSTNAME \
     --stun \
     --verify-clients=$TAILSCALE_DERP_VERIFY_CLIENTS
-
-
-
---snat-subnet-routes=false
